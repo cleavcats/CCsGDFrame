@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Godot;
 using System;
 using System.Runtime.CompilerServices;
+using System.Xml.Linq;
 
 namespace CCsGDFrame
 {
@@ -31,9 +32,11 @@ namespace CCsGDFrame
         {
             if (OS.IsDebugBuild()/*编辑器内运行时（包括vscode debug），将工作路径导向至 runtime*/)
             {
-                System.IO.Directory.SetCurrentDirectory(System.IO.Directory.GetCurrentDirectory() + "/../" +
-              System.IO.Path.GetFileName(System.IO.Directory.GetCurrentDirectory()) + "_Runtime/");
-                //GD.Print("DebugPath= " + System.IO.Directory.GetCurrentDirectory());
+                if (OS.HasFeature("editor"))
+                {
+                    System.IO.Directory.SetCurrentDirectory(System.IO.Directory.GetCurrentDirectory() + "/../" +
+                        System.IO.Path.GetFileName(System.IO.Directory.GetCurrentDirectory()) + "_Runtime/");
+                }
                 System.Diagnostics.Debug.WriteLine("DebugPath= " + System.IO.Directory.GetCurrentDirectory());
                 is_debug = true;
             }
