@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Modern9.mp3-9b2ea068fef322c90296416ddcf301a4.mp3str"
+
+[deps]
+
+source_file="res://Voice/SE/Modern9.mp3"
+dest_files=[ "res://.import/Modern9.mp3-9b2ea068fef322c90296416ddcf301a4.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
