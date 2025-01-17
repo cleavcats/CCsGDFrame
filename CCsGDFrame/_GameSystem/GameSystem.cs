@@ -132,6 +132,7 @@ namespace CCsGDFrame
         public static bool GameSave(string save_name)
         {
             System.IO.FileStream file;
+            System.IO.Directory.CreateDirectory("Save/");
             try { file = System.IO.File.Create("Save/" + save_name + ".savedata"); }
             catch { return false; }
             data._default.Set("_system_working_scene", scene_system.working_scene.Scene_name);
@@ -159,7 +160,7 @@ namespace CCsGDFrame
         /// </summary>
         public static void GameCreate()
         {
-
+            GameSystem.data.Clear();
         }
         /// <summary>
         ///  // 回到开始界面

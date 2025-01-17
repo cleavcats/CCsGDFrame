@@ -31,7 +31,7 @@ namespace Demo
         }
 
         void When_LoadGame() { GameSystem.GameRead("save_0"); }
-        void When_NewGame() { GameSystem.data.Clear(); GameSystem.scene_system.SceneJumpTo("Gaming"); }
+        void When_NewGame() { GameSystem.GameCreate(); GameSystem.scene_system.SceneJumpTo("Gaming"); }
         void When_ExitGame() { GameSystem.GameQuit(); }
         void When_language_zh_cn() { GameSystem.translate.factory.language_using = "zh-cn"; Translate(); }
         void When_language_en_us() { GameSystem.translate.factory.language_using = "en-us"; Translate(); }
