@@ -1,8 +1,8 @@
 # CCsGDFrame
- 一个应用于 Godot 的 C# 小型游戏框架，提供了 场景、UI、音频、存档、多语言翻译等功能的支持。
+<br> 一个应用于 Godot 的 C# 小型游戏框架，提供了 场景、UI、音频、存档、多语言翻译等功能的支持。
 附带一个简单的拼图小游戏 Demo。
 ### 注意事项
-必须创建一个与项目同名的 _Runtime文件夹，例：若项目路径为 D:/CCsGDFrame_Demo/，则需要创建一个 D:/CCsGDFrame_Demo_Runtime/ 文件夹，Debug时游戏的运行路径将会重新设置到此处，此举是为了模拟导出后的exe的运行环境，来尽可能的消除导出前后的运行环境差别，以及为开发过程中的调试提供真实运行环境。
+<br>必须创建一个与项目同名的 _Runtime文件夹，例：若项目路径为 D:/CCsGDFrame_Demo/，则需要创建一个 D:/CCsGDFrame_Demo_Runtime/ 文件夹，Debug时游戏的运行路径将会重新设置到此处，此举是为了模拟导出后的exe的运行环境，来尽可能的消除导出前后的运行环境差别，以及为开发过程中的调试提供真实运行环境。
 ### 快速开始
 <br>1.新建一个空白项目，将 CCsGDFrame 目录下的内容复制到项目的根目录中，并创建与项目同名的Runtime文件夹。
 <br>2.将项目的起始场景设置为 res://CCsGDFrame/_GameSystem/Scene/root.tscn
@@ -11,12 +11,13 @@
 <br>5.运行项目，场景将会自动跳转到 MainScene
 
 ### 静态全局对象：CCsGDFrame.GameSystem
+<br> 默认扫描整个项目中 继承自 Cleavcats.DataGroup 的类型，为他们各自创建一个实例并存入 GameSystem.data 中去，若想改变这一行为需要修改 GameSystem.Init() 方法。
 <br>GameSave 将存档保存到运行路径的 Save/目录下的指定文件中
 <br>GameRead从运行路径的 Save/目录下的指定文件中读取存档，并跳转到保存时所处的场景中去。
 <br>GameCreate 执行所有存档数据 的 Clear 方法
 <br>GameRestore 回到 root 场景中指定的那个游戏登录界面，并 Clear 存档。
 <br>GameQuit 游戏退出。
-<br> 默认扫描整个项目中 继承自 Cleavcats.DataGroup 的类型，为他们各自创建一个实例并存入 GameSystem.data 中去，若想改变这一行为需要修改 GameSystem.Init() 方法。
+<br> GameSystem.config 从运行路径下的 config.csv 自动读取的配置文件，用来存储与存档无关的数据如游戏的图形配置参数等，需要手动调用 GameSystem.ConfigSave 来保存。
 
 ### 场景模块：CCsGDFrame.GameSystem.scene_system
 <br>调用 SceneJumpTo 来切换场景，场景只会同时存在一个，加载另一个场景前自动卸载原有的。
@@ -44,9 +45,13 @@
 <br>GameSystem.translate.Translate 寻找目标节点，并尝试将其 Text属性设置为 翻译数据中的某个键所记录的字符串。
 
 ### 外部资源模块：CCsGDFrame.GameSystem.game_io
-<br>读取资源时优先考虑外部资源，如果不存在，才考虑pck的嵌入资源，编辑器中Debug 与 Debug导出时才会工作，Release导出时此模块只考虑pck的嵌入资源。此举是为了在团队协作中为合作者提供完整的导出版程序，使非程序合作者无需安装Godot工作流即可进行素材的编辑与替换，Release导出时开发者将对应素材迁徙到项目内部即可。
+<br>读取资源时优先考虑外部资源，如果不存在，才考虑pck的嵌入资源，编辑器内Debug 与 Debug导出时才会工作，Release导出时此模块只考虑pck的嵌入资源。此举是为了在团队协作中为合作者提供完整的导出版程序，使非程序合作者无需安装Godot工作流即可进行素材的编辑与替换，Release导出时开发者将对应素材迁徙到项目内部即可。
 <br>GetResource 等同于 Godot.ResourceLoader.Load，但是会首先考虑读取外部路径中的素材，如果没有找到才考虑读取 res:// 中对应路径的资源。
 
 ### 单元测试模块
 <br>框架自带的一个ui，通过点击窗口右下角显示的 debug 按钮来展开，此按钮在 release导出时自动隐藏。
 <br>扩展CCsGDFrame下的 public partial class UI_Debug 来编写你的单元测试代码，其中定义的所有以 When_ 开头的方法均会作为一个按钮加入到该 ui 中，同时提供了 LogLine() 来显示输出的字符串。
+
+<br>Voice Credit:
+<br>https://cyrex-studios.itch.io/universal-ui-soundpack
+<br>https://potat0master.itch.io/free-background-music-for-visual-novels-bgm-pack-1
