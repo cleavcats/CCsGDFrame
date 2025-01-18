@@ -44,6 +44,11 @@
 <br>GameSystem.translate.factory.language_using 设置此项来更改当前所使用的语言，如果在该语言中没有找到 对应的键，则从默认语言中寻找。
 <br>GameSystem.translate.Translate 寻找目标节点，并尝试将其 Text属性设置为 翻译数据中的某个键所记录的字符串。
 
+### 键盘控制器模块：CCsGDFrame.GameSystem.keybord_controler
+<br> 监听按键消息，重载你感兴趣的按键的 OnDown、OnUp、OnHold等虚方法来自定义按键的响应事件。 键盘控制器存在一个队列，放入其中的控制器必须继承自 CCsGDFrame.KeyBoardControler，只有队列末尾的控制器才会工作。
+<br> Add 添加一个控制器到队列末尾，可选的参数列表将会传递给该控制器的 Start 虚方法来进行一些初始化。
+<br> Remove 从队列中移除一个控制器
+
 ### 外部资源模块：CCsGDFrame.GameSystem.game_io
 <br>读取资源时优先考虑外部资源，如果不存在，才考虑pck的嵌入资源，编辑器内Debug 与 Debug导出时才会工作，Release导出时此模块只考虑pck的嵌入资源。此举是为了在团队协作中为合作者提供完整的导出版程序，使非程序合作者无需安装Godot工作流即可进行素材的编辑与替换，Release导出时开发者将对应素材迁徙到项目内部即可。
 <br>GetResource 等同于 Godot.ResourceLoader.Load，但是会首先考虑读取外部路径中的素材，如果没有找到才考虑读取 res:// 中对应路径的资源。
@@ -52,6 +57,6 @@
 <br>框架自带的一个ui，通过点击窗口右下角显示的 debug 按钮来展开，此按钮在 release导出时自动隐藏。
 <br>扩展CCsGDFrame下的 public partial class UI_Debug 来编写你的单元测试代码，其中定义的所有以 When_ 开头的方法均会作为一个按钮加入到该 ui 中，同时提供了 LogLine() 来显示输出的字符串。
 
-<br>Voice Credit:
+<br>Demo Voice Credit:
 <br>https://cyrex-studios.itch.io/universal-ui-soundpack
 <br>https://potat0master.itch.io/free-background-music-for-visual-novels-bgm-pack-1
