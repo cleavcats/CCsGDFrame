@@ -7,7 +7,7 @@ using System.IO;
 
 namespace Demo
 {
-    public class GamingData : DataGroup
+    public class GamingData : Cleavcats.DataGroup
     {
         public static GamingData ptr;
         public GamingData() : base("GamingData") { ptr = this; }
