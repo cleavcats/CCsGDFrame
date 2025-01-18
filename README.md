@@ -52,6 +52,6 @@
 <br>框架自带的一个ui，通过点击窗口右下角显示的 debug 按钮来展开，此按钮在 release导出时自动隐藏。
 <br>扩展CCsGDFrame下的 public partial class UI_Debug 来编写你的单元测试代码，其中定义的所有以 When_ 开头的方法均会作为一个按钮加入到该 ui 中，同时提供了 LogLine() 来显示输出的字符串。
 
-<br>Voice Credit:
+<br>Demo Voice Credit:
 <br>https://cyrex-studios.itch.io/universal-ui-soundpack
 <br>https://potat0master.itch.io/free-background-music-for-visual-novels-bgm-pack-1
