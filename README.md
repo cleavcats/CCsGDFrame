@@ -45,7 +45,7 @@
 <br>GameSystem.translate.Translate 寻找目标节点，并尝试将其 Text属性设置为 翻译数据中的某个键所记录的字符串。
 
 ### 键盘控制器模块：CCsGDFrame.GameSystem.keybord_controler
-<br> 监听按键消息，重载你感兴趣的按键的 OnDown、OnUp、OnHold等虚方法来自定义按键的响应事件。 键盘控制器存在一个队列，放入其中的控制器必须继承自 CCsGDFrame.KeyBoardControler，只有队列末尾的控制器才会工作的。
+<br> 监听按键消息，重载你感兴趣的按键的 OnDown、OnUp、OnHold等虚方法来自定义按键的响应事件。 键盘控制器存在一个队列，放入其中的控制器必须继承自 CCsGDFrame.KeyBoardControler，只有队列末尾的控制器才会工作。
 <br> Add 添加一个控制器到队列末尾，可选的参数列表将会传递给该控制器的 Start 虚方法来进行一些初始化。
 <br> Remove 从队列中移除一个控制器
 
