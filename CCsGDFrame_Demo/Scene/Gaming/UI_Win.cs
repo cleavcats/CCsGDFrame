@@ -15,11 +15,17 @@ namespace Demo
         {
             // 用一个新的控制器 阻断 原本的键盘控制
             GameSystem.keybord_controler.Add(keyboard);
+            Translate();
         }
         public override void _ExitTree()
         {
             GameSystem.keybord_controler.Remove(keyboard);
         }
+        void Translate()
+        {
+            GameSystem.translate.Translate(this, "Win", "ui", "you win");
+        }
+
         void When_ButtonWin() 
         {
             GameSystem.ui_controler.UI_Close(this.Name);

@@ -77,7 +77,6 @@ namespace Demo
         {
             GameSystem.translate.Translate(this, "Save", "ui", "save");
             GameSystem.translate.Translate(this, "Game_info", "ui", "gaming_info");
-            GameSystem.translate.Translate(this, "Win", "ui", "you win");
         }
         void When_Save() { GameSystem.GameSave("save_0"); GameSystem.voice_controler.SE_Play("Modern9.mp3"); }
 
