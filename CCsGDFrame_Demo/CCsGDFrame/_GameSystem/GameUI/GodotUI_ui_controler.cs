@@ -38,12 +38,12 @@ namespace CCsGDFrame
         }
         /// <summary>
         /// // 将一个 UI 从节点树中摘除，并加入到此处的 UI 列表中
-        /// <br>// 如果同名UI 已存在于 列表中，则什么也不会发生</br>
+        /// <br>// 如果同名UI 已存在于 列表中，则该UI将会丢弃</br>
         /// </summary>
         public void UI_Add(Control ui)
         {
-            if (pool.ContainsKey(ui.Name)) return;
             if (ui.IsInsideTree()) ui.GetParent().RemoveChild(ui);
+            if (pool.ContainsKey(ui.Name)) { ui.QueueFree(); return; }
             pool.Add(ui.Name, ui);
         }
         /// <summary>
