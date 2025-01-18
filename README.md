@@ -33,7 +33,7 @@
 <br>SE_Play 播放音效，可以单独设置音量，也可以通过 SE_volume 设置全部音效的 总音量。
 
 ### 存档模块：CCsGDFrame.GameSystem.data
-<br>Get() 取得指定的 Cleavcats.DataGroup 的实例，可以继承该类型来扩展存档的内容，框架将会扫描所有继承自 DataGroup的类型并在存档中创建一个实例，自定义的 DataGroup 需要继承 Clear，SaveTo，ReadFrom 方法来管理自己数据的存取。
+<br>Get() 取得指定的 CCsGDFrame.DataGroup 的实例，可以继承该类型来扩展存档的内容，框架将会扫描所有继承自 DataGroup的类型并在存档中创建一个实例，自定义的 DataGroup 需要继承 Clear，SaveTo，ReadFrom 方法来管理自己数据的存取。
 <br>Clear() 初始化所有 DataGrop
 
 ### 多语言翻译模块：CCsGDFrame.GameSystem.translate
